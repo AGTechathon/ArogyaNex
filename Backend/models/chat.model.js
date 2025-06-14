@@ -24,7 +24,7 @@ const chatSchema = new mongoose.Schema({
   },
   preferredLanguage: {
     type: String,
-    enum: ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'or', 'as', 'sa', 'sd', 'ne'],
+    required: true,
     default: 'en'
   },
   messages: [messageSchema],
@@ -44,4 +44,6 @@ chatSchema.pre('save', function(next) {
   next();
 });
 
-module.exports = mongoose.model('Chat', chatSchema); 
+const Chat = mongoose.model('Chat', chatSchema);
+
+module.exports = Chat; 
