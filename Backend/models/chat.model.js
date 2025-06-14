@@ -24,6 +24,7 @@ const chatSchema = new mongoose.Schema({
   },
   preferredLanguage: {
     type: String,
+    enum: ['en', 'hi', 'bn', 'ta', 'te', 'mr', 'gu', 'kn', 'ml', 'pa', 'or', 'as', 'sa', 'sd', 'ne'],
     required: true,
     default: 'en'
   },
