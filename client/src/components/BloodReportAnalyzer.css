@@ -1,0 +1,333 @@
+.blood-report-analyzer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.upload-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.upload-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.file-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+}
+
+.reports-section {
+  margin-bottom: 30px;
+}
+
+.reports-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.report-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-item:hover {
+  background: #f8f9fa;
+}
+
+.report-item.selected {
+  border-color: #007bff;
+  background: #e7f1ff;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.report-name {
+  font-weight: 500;
+}
+
+.report-status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+.report-status.pending { background: #ffeeba; color: #856404; }
+.report-status.processing { background: #b8daff; color: #004085; }
+.report-status.completed { background: #c3e6cb; color: #155724; }
+.report-status.failed { background: #f5c6cb; color: #721c24; }
+
+.report-date {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Analysis Section Styles */
+.analysis-section {
+  margin-top: 30px;
+}
+
+.analysis-summary-card,
+.parameter-card,
+.general-recommendations-card,
+.monitoring-card,
+.disclaimer-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.analysis-summary-card h3,
+.parameter-card h3,
+.general-recommendations-card h3,
+.monitoring-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.overall-health {
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.key-findings,
+.risk-factors {
+  margin-top: 15px;
+}
+
+.key-findings h4,
+.risk-factors h4 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.key-findings ul,
+.risk-factors ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.key-findings li,
+.risk-factors li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.key-findings li:last-child,
+.risk-factors li:last-child {
+  border-bottom: none;
+}
+
+/* Parameter Cards */
+.parameter-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.parameter-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.parameter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.parameter-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.parameter-status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+.status-low { background: #f8d7da; color: #721c24; }
+.status-normal { background: #d4edda; color: #155724; }
+.status-high { background: #fff3cd; color: #856404; }
+
+.parameter-values {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.parameter-value {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.parameter-range {
+  color: #666;
+}
+
+.parameter-explanation {
+  margin-bottom: 15px;
+}
+
+.parameter-explanation strong {
+  color: #34495e;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Recommendations Sections */
+.recommendation-section {
+  margin-top: 15px;
+}
+
+.recommendation-section h5 {
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.recommendation-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recommendation-section li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.recommendation-section li:last-child {
+  border-bottom: none;
+}
+
+/* Exercise Recommendations */
+.exercise-recommendation {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.exercise-recommendation h5 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.exercise-recommendation p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Monitoring Section */
+.monitoring-section {
+  margin-top: 15px;
+}
+
+.monitoring-section h4 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.monitoring-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.monitoring-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.monitoring-section li:last-child {
+  border-bottom: none;
+}
+
+/* Disclaimer */
+.disclaimer-card {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  margin-top: 30px;
+}
+
+.disclaimer-card strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parameter-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-container {
+    flex-direction: column;
+  }
+
+  .upload-button {
+    width: 100%;
+  }
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* Error State */
+.error-state {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+} 

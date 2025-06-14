@@ -8,6 +8,7 @@ const rateLimit = require('express-rate-limit');
 
 const chatbotRoutes = require('./routes/chatbot.routes');
 const emergencyRoutes = require('./routes/emergency.routes');
+const bloodReportRoutes = require('./routes/bloodReportRoutes');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(limiter);
 
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/emergency', emergencyRoutes);
+app.use('/api/blood-reports', bloodReportRoutes);
 
 
 
