@@ -1,5 +1,6 @@
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Chatbot from './components/Chatbot';
+import EmergencyAlert from './components/EmergencyAlert';
 
 const theme = createTheme({
   palette: {
@@ -37,13 +38,11 @@ const theme = createTheme({
 });
 
 function App() {
-  // For now, let's render both components. You can add navigation later if needed.
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Chatbot />
-      {/* You can comment out Chatbot and uncomment EmergencyAlert to test it, or add navigation */}
-      {/* <EmergencyAlert /> */}
+      {/* <Chatbot /> */}
+      <EmergencyAlert />
     </ThemeProvider>
   );
 }

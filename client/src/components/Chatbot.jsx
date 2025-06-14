@@ -127,111 +127,125 @@ const Chatbot = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 800, mx: 'auto', p: 2, height: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Paper elevation={3} sx={{ p: 2, mb: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-        <TranslateIcon color="primary" />
-        <FormControl sx={{ minWidth: 200 }}>
-          <InputLabel>Language</InputLabel>
-          <Select
-            value={language}
-            label="Language"
-            onChange={handleLanguageChange}
-          >
-            {supportedLanguages.map((lang) => (
-              <MenuItem key={lang.code} value={lang.code}>
-                {lang.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Paper>
+    <div>
+      <Box sx={{ 
+      maxWidth: 800, 
+      width: '100%',
+      height: '100vh',
+      mx: 'auto',
+      p: 2, 
+      display: 'flex', 
+      flexDirection: 'column',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}>
+        <Paper elevation={3} sx={{ p: 2, mb: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
+          <TranslateIcon color="primary" />
+          <FormControl sx={{ minWidth: 200 }}>
+            <InputLabel>Language</InputLabel>
+            <Select
+              value={language}
+              label="Language"
+              onChange={handleLanguageChange}
+            >
+              {supportedLanguages.map((lang) => (
+                <MenuItem key={lang.code} value={lang.code}>
+                  {lang.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Paper>
 
-      <Paper 
-        elevation={3} 
-        sx={{ 
-          flex: 1, 
-          mb: 2, 
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        <Box sx={{ 
-          p: 2, 
-          overflowY: 'auto',
-          flex: 1,
-          bgcolor: '#f5f5f5'
-        }}>
-          <List>
-            {messages.map((message, index) => (
-              <React.Fragment key={index}>
-                <ListItem
-                  alignItems="flex-start"
-                  sx={{
-                    flexDirection: message.type === 'user' ? 'row-reverse' : 'row',
-                    gap: 1
-                  }}
-                >
-                  <ListItemAvatar>
-                    <Avatar sx={{ bgcolor: message.type === 'user' ? 'primary.main' : 'secondary.main' }}>
-                      {message.type === 'user' ? <UserIcon /> : <BotIcon />}
-                    </Avatar>
-                  </ListItemAvatar>
-                  <Paper
-                    elevation={1}
-                    sx={{
-                      p: 1.5,
-                      maxWidth: '70%',
-                      bgcolor: message.type === 'user' ? 'primary.light' : 'white',
-                      color: message.type === 'user' ? 'white' : 'text.primary',
-                      borderRadius: 2
-                    }}
-                  >
-                    <ReactMarkdown>{message.content}</ReactMarkdown>
-                    <Typography variant="caption" sx={{ display: 'block', mt: 1, opacity: 0.7 }}>
-                      {format(message.timestamp, 'HH:mm')}
-                    </Typography>
-                  </Paper>
-                </ListItem>
-                {index < messages.length - 1 && <Divider variant="inset" component="li" />}
-              </React.Fragment>
-            ))}
-            <div ref={messagesEndRef} />
-          </List>
-        </Box>
-
-        <Box
-          component="form"
-          onSubmit={handleSend}
+        <Paper
+          elevation={3}
           sx={{
-            p: 2,
-            bgcolor: 'background.paper',
-            borderTop: 1,
-            borderColor: 'divider',
+            flex: 1,
+            mb: 2,
+            overflow: 'hidden',
             display: 'flex',
-            gap: 1
+            flexDirection: 'column'
           }}
         >
-          <TextField
-            fullWidth
-            variant="outlined"
-            placeholder="Type your message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            disabled={isLoading}
-            size="small"
-          />
-          <IconButton 
-            type="submit" 
-            color="primary" 
-            disabled={isLoading || !input.trim()}
-            sx={{ minWidth: 48 }}
+          <Box sx={{
+            p: 2,
+            overflowY: 'auto',
+            flex: 1,
+            bgcolor: '#f5f5f5'
+          }}>
+            <List>
+              {messages.map((message, index) => (
+                <React.Fragment key={index}>
+                  <ListItem
+                    alignItems="flex-start"
+                    sx={{
+                      flexDirection: message.type === 'user' ? 'row-reverse' : 'row',
+                      gap: 1
+                    }}
+                  >
+                    <ListItemAvatar>
+                      <Avatar sx={{ bgcolor: message.type === 'user' ? 'primary.main' : 'secondary.main' }}>
+                        {message.type === 'user' ? <UserIcon /> : <BotIcon />}
+                      </Avatar>
+                    </ListItemAvatar>
+                    <Paper
+                      elevation={1}
+                      sx={{
+                        p: 1.5,
+                        maxWidth: '70%',
+                        bgcolor: message.type === 'user' ? 'primary.light' : 'white',
+                        color: message.type === 'user' ? 'white' : 'text.primary',
+                        borderRadius: 2
+                      }}
+                    >
+                      <ReactMarkdown>{message.content}</ReactMarkdown>
+                      <Typography variant="caption" sx={{ display: 'block', mt: 1, opacity: 0.7 }}>
+                        {format(message.timestamp, 'HH:mm')}
+                      </Typography>
+                    </Paper>
+                  </ListItem>
+                  {index < messages.length - 1 && <Divider variant="inset" component="li" />}
+                </React.Fragment>
+              ))}
+              <div ref={messagesEndRef} />
+            </List>
+          </Box>
+
+          <Box
+            component="form"
+            onSubmit={handleSend}
+            sx={{
+              p: 2,
+              bgcolor: 'background.paper',
+              borderTop: 1,
+              borderColor: 'divider',
+              display: 'flex',
+              gap: 1
+            }}
           >
-            {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
-          </IconButton>
-        </Box>
-      </Paper>
-    </Box>
+            <TextField
+              fullWidth
+              variant="outlined"
+              placeholder="Type your message..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              disabled={isLoading}
+              size="small"
+            />
+            <IconButton
+              type="submit"
+              color="primary"
+              disabled={isLoading || !input.trim()}
+              sx={{ minWidth: 48 }}
+            >
+              {isLoading ? <CircularProgress size={24} /> : <SendIcon />}
+            </IconButton>
+          </Box>
+        </Paper>
+      </Box>
+    </div>
   );
 };
 

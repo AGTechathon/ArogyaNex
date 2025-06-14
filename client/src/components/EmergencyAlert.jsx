@@ -42,7 +42,6 @@ const EmergencyAlert = () => {
   const [serviceStatus, setServiceStatus] = useState(null);
 
   useEffect(() => {
-    // Check service status on component mount
     checkServiceStatus();
   }, []);
 
@@ -53,7 +52,6 @@ const EmergencyAlert = () => {
     } catch (err) {
       console.error('Error checking service status:', err);
       setServiceStatus({
-        error: true,
         message: 'Failed to connect to emergency services'
       });
     }
@@ -288,7 +286,20 @@ const EmergencyAlert = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 800, mx: 'auto', p: 2, height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ 
+      maxWidth: 800, 
+      width: '100%',
+      height: '100vh',
+      mx: 'auto',
+      p: 2, 
+      display: 'flex', 
+      flexDirection: 'column',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      overflowY: 'auto'
+    }}>
       <Typography variant="h5" component="h1" gutterBottom>
         Emergency Alert System
       </Typography>
