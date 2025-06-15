@@ -200,3 +200,19 @@ python app.py
 > Empowering every village with intelligent, accessible, and reliable healthcare —\
 > that’s the **AarogyaNex** vision.
 
+
+---
+
+## Output
+
+![image](https://github.com/user-attachments/assets/3c27f037-ab1b-46c5-a800-cf081dab4519)
+![image](https://github.com/user-attachments/assets/20686af2-0b71-442c-b3d1-c048fa8bae2e)
+![image](https://github.com/user-attachments/assets/497e97ae-1157-405c-a132-305b70bee705)
+![image](https://github.com/user-attachments/assets/f230b110-ac57-4af2-b846-e10a90f4f772)
+![image](https://github.com/user-attachments/assets/700b8c60-c4a1-4574-a0e2-46e829dd4e82)
+![image](https://github.com/user-attachments/assets/9797600f-f7f8-4bbd-b550-5ba3287f1359)
+
+
+
+
+
