@@ -137,10 +137,10 @@ All in **regional languages** with **voice/text** support.\
 | Area                | Technology Stack                                | Description                             |
 | ------------------- | ----------------------------------------------- | --------------------------------------- |
 | **Frontend**        | React.js, Tailwind CSS, HTML5, JavaScript       | UI and user input handling              |
-| **Backend**         | Node.js, Express.js, Firebase Auth, JWT         | API endpoints, auth, session management |
-| **AI/ML**           | Python, TensorFlow, Keras, scikit-learn, OpenCV | Model training and prediction           |
-| **Chatbot/NLP**     | OpenAI API, custom symptom logic                | AI-powered health dialogue engine       |
-| **APIs & Services** | Google Maps API, Twilio, Firebase FCM           | GPS, alerts, notifications              |
+| **Backend**         | Node.js,  Firebase Auth, JWT                    | API endpoints, auth, session management |
+| **AI**              | Python, TensorFlow,  OpenCV                     | Model training and prediction           |
+| **Chatbot**         | OpenAI API, custom symptom logic                | AI-powered health dialogue engine       |
+| **APIs & Services** | Google Maps API , Firebase FCM                  | GPS, alerts, notifications              |
 | **Report Parsing**  | Tesseract OCR, Flask                            | Blood report text/image analysis        |
 | **Deployment**      | Firebase, Render.com, Cloud Storage             | Hosting and storage                     |
 
