@@ -5,23 +5,21 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
-
 const chatbotRoutes = require('./routes/chatbot.routes');
 const emergencyRoutes = require('./routes/emergency.routes');
 const bloodReportRoutes = require('./routes/bloodReportRoutes');
+const appointmentRoutes = require('./routes/appointment.routes');
+const authRoutes = require('./routes/auth.routes');
 
 const app = express();
-
 
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, 
@@ -29,26 +27,24 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-
+app.use('/api/auth', authRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/emergency', emergencyRoutes);
 app.use('/api/blood-reports', bloodReportRoutes);
-
-
+app.use('/api/appointments', appointmentRoutes);
 
 app.use((err, req, res, next) => {
-  logger.error(err.stack);
+  console.error(err.stack);
   res.status(500).json({
     status: 'error',
     message: 'Something went wrong!',
   });
 });
 
-
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
-    const PORT = 3020;
+    const PORT = process.env.PORT || 3020;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
