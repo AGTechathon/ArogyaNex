@@ -1,6 +1,5 @@
 # 🚀 AarogyaNex – Multilingual AI Health Assistant for Rural India
 
----
 
 ## 👥 Team Name
 
